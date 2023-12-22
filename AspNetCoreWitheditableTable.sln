@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreWithReactApi", "AspNetCoreWithReactApi\AspNetCoreWithReactApi.csproj", "{D7D13059-87C2-4B7D-823C-CCA1BA6A2A2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPageTableProssesor", "RazorPageTableProssesor\RazorPageTableProssesor.csproj", "{C815B200-2550-4FC4-A8E8-2BC257C3DF22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7D13059-87C2-4B7D-823C-CCA1BA6A2A2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D13059-87C2-4B7D-823C-CCA1BA6A2A2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D13059-87C2-4B7D-823C-CCA1BA6A2A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D13059-87C2-4B7D-823C-CCA1BA6A2A2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C815B200-2550-4FC4-A8E8-2BC257C3DF22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C815B200-2550-4FC4-A8E8-2BC257C3DF22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C815B200-2550-4FC4-A8E8-2BC257C3DF22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C815B200-2550-4FC4-A8E8-2BC257C3DF22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {655CC439-64EC-470F-B6C2-65541A018DAF}
+	EndGlobalSection
+EndGlobal

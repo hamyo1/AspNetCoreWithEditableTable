@@ -1,0 +1,79 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form id="mainForm" method="post" asp-antiforgery="true">
+        <table id="columnsToImportTable" class="display roundedCorners" width="100%">
+            <thead>
+                <tr>
+                    <th class="centreText">פעולות</th>
+                    <th class="centreText">פלאפון מעסיק</th>
+                    <th class="centreText">שם מעסיק</th>
+                    <th class="centreText">מספר מעסיק</th>
+                    <th class="centreText">אימייל</th>
+                    <th class="centreText">פלאפון</th>
+                    <th class="centreText">תעודת זהות</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (var i = 0; i < Model.dataModelList.Count(); i++)
+                {
+                    <tr>
+                        <td>
+                            <button formmethod="post">שמור</button>
+                            <button formmethod="post">מחק</button>
+                            <button formmethod="post">ערוך</button>
+                        </td>
+                        <td class="modifiedColumnNames">
+                            <div class="editdiv" contenteditable>@Model.dataModelList[i].employerPhone</div>
+                            <input type="hidden" asp-for="@Model.dataModelList[i].employerPhone">
+                        </td>
+                        <td class="modifiedColumnNames">
+                            <div class="editdiv" contenteditable>@Model.dataModelList[i].employerName</div>
+                            <input type="hidden" asp-for="@Model.dataModelList[i].employerName">
+                        </td>                      
+                        <td class="modifiedColumnNames">
+                            <div class="editdiv" contenteditable>@Model.dataModelList[i].employerId</div>
+                            <input type="hidden" asp-for="@Model.dataModelList[i].employerId">
+                        </td>                       
+                        <td class="modifiedColumnNames">
+                            <div class="editdiv" contenteditable>@Model.dataModelList[i].customerEmail</div>
+                            <input type="hidden" asp-for="@Model.dataModelList[i].customerEmail">
+                        </td>                       
+                        <td class="modifiedColumnNames">
+                            <div class="editdiv" contenteditable>@Model.dataModelList[i].customerPhone</div>
+                            <input type="hidden" asp-for="@Model.dataModelList[i].customerPhone">
+                        </td>                        
+                        <td class="modifiedColumnNames">
+                            <div class="editdiv" contenteditable>@Model.dataModelList[i].customerId</div>
+                            <input type="hidden" asp-for="@Model.dataModelList[i].customerId">
+                        </td>
+
+
+@*                         <td class="greyOutBackground centreText defaultCursor">@Model.newLayer.ColumnNames[i]</td>
+                        <td id="importColumn" class="greyOutBackground centreText pointerCursor green tick true">
+                            &#10004;
+                            <input type="hidden" asp-for="@Model.newLayer.ImportColumn[i]" value="true">
+                        </td>
+                        <td id="modifiedColumnNames">
+                            <div class="editdiv" contenteditable>@Model.newLayer.ColumnNames[i]</div>
+                            <input type="hidden" asp-for="@Model.newLayer.ColumnNames[i]">
+                        </td> *@
+                    </tr>
+@*                     <input id="rawIndex" type="hidden" asp-for="@Model.index">
+ *@
+                }
+            </tbody>
+        </table>
+        <div>
+            <input id="importButton" type="submit" value="Import">
+        </div>
+    </form>
+
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
