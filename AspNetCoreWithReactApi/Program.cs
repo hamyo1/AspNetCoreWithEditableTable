@@ -1,4 +1,6 @@
 using AspNetCoreWithReactApi.BackgroundTasks;
+using AspNetCoreWithReactApi.Queuing;
+using Lubinski.Commbox.API.BackgroundTasks;
 using Microsoft.Extensions.Configuration;
 using RazorPageTableProssesor.Interfaces;
 using RazorPageTableProssesor.Services;
@@ -11,6 +13,25 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddTransient<ICreateClipsService, CreateClipsService>();
 
+#region Queue
+//Queue
+builder.Services.AddHostedService<QueuedHostedService>();
+builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+#endregion
+builder.Services.AddScoped<ICustomerConversation, CustomerConversation>();
+
+//where you use the quee   await _queue.QueueBackgroundWorkItem(eventArgs);
+/*
+ * inject example
+         readonly IBackgroundTaskQueue _queue;
+        readonly ILogger<ActivitiesController> _logger;
+
+        public ActivitiesController(IBackgroundTaskQueue queue, ILogger<ActivitiesController> logger)
+        {
+            _queue = queue;
+            _logger = logger;
+        }
+ */
 
 //adding serilog
 Log.Logger = new LoggerConfiguration()
